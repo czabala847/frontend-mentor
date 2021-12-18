@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- logo -->
+      <figure class="logo">
+        <img src="./images/logo.svg" alt="logo" class="logo_img" />
+      </figure>
+
+      <!-- calculadora -->
+      <section class="calculator">
+        <!-- parte de operaciones -->
+        <article class="operation">
+          <form action="#">
+            <div class="form-group">
+              <label for="txt-bill">Bill</label>
+              <input type="number" placeholder="0" id="txt-bill" />
+            </div>
+
+            <div class="form-group container-percent">
+              <label for="percent">Select tip %</label>
+              <div class="group-percent">
+                <button>5%</button>
+                <button>10%</button>
+                <button>15%</button>
+                <button>25%</button>
+                <button>50%</button>
+                <!-- <button>50%</button> -->
+                <input type="number" placeholder="custom" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="txt-people">Number of people</label>
+              <input type="number" placeholder="0" id="txt-people" />
+            </div>
+          </form>
+        </article>
+
+        <!-- mostrar resultado -->
+        <article class="result">
+          <div class="data-result">
+            <div class="amount result-container">
+              <div class="amount_text">
+                Tip Amount <br />
+                <span class="text-person">/ person</span>
+              </div>
+              <div class="amount_result">$ 0.00</div>
+            </div>
+            <div class="total result-container">
+              <div class="amount_text">
+                Tip Amount <br />
+                <span class="text-person">/ person</span>
+              </div>
+              <div class="amount_result">$ 0.00</div>
+            </div>
+          </div>
+          <div class="container-btn">
+            <button>reset</button>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

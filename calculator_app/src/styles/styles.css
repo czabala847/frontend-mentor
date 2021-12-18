@@ -95,6 +95,7 @@ input::-webkit-inner-spin-button {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 1rem;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 
 .group-percent {
@@ -173,6 +174,36 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
 }
 
+.container-btn button.disabled {
+  background-color: #005c61;
+}
+
 .container-btn button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 880px) {
+  .calculator {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+
+  .result {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .group-percent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .result {
+    padding: 1.5rem;
+  }
 }

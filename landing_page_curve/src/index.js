@@ -1,4 +1,9 @@
 import "bootstrap";
-import "./sass/index.scss";
+import "./styles/index.scss";
 
-console.log("hola");
+import { Home } from "@pages/Home";
+
+(async function App() {
+  const main = null || document.getElementById("main");
+  main.innerHTML = await Home();
+})();

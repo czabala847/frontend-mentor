@@ -5,14 +5,21 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    clean: true,
-    path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "assets/images/[hash][ext][query]",
+    publicPath: "/",
+    clean: true,
   },
   mode: "development",
   devtool: "source-map",
   resolve: {
     extensions: [".js"],
+    alias: {
+      "@components": path.resolve(__dirname, "./src/components/"),
+      "@pages": path.resolve(__dirname, "./src/pages/"),
+      "@logos": path.resolve(__dirname, "./src/assets/logos/"),
+    },
   },
   module: {
     rules: [
@@ -27,6 +34,10 @@ module.exports = {
         test: /\.css|.scss$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      {
+        test: /\.svg/,
+        type: "asset/resource",
+      },
     ],
   },
 
@@ -40,4 +51,14 @@ module.exports = {
       filename: "assets/[name].[contenthash].css",
     }),
   ],
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    historyApiFallback: true,
+    port: 3006,
+    open: true,
+  },
 };
